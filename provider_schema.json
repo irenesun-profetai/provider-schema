@@ -1,0 +1,78 @@
+{
+  "providers": [
+    {
+      "id": "openai",
+      "label": "OpenAI",
+      "icon": "openai",
+      "sections": [
+        {
+          "id": "basic",
+          "label": "Basic Information",
+          "collapsible": false,
+          "fields": [
+            { "key": "modelInfoKey", "label": "Model Info",  "type": "model-info-select", "required": true,  "target": "topLevel" },
+            { "key": "name",         "label": "Model Name",  "type": "string",            "required": true,  "target": "topLevel" },
+            { "key": "tags",         "label": "Tags",        "type": "tag-picker",        "required": false, "target": "topLevel" }
+          ]
+        },
+        {
+          "id": "credential",
+          "label": "Model Credential",
+          "collapsible": false,
+          "fields": [
+            { "key": "api_key",      "label": "API Key",      "type": "password", "required": true,  "target": "options", "placeholder": "sk-..." },
+            { "key": "api_base",     "label": "API Base",     "type": "url",      "required": false, "target": "options", "placeholder": "留空使用 https://api.openai.com" },
+            { "key": "organization", "label": "Organization", "type": "string",   "required": false, "target": "options", "placeholder": "選填，多組織帳號時才需填寫" }
+          ]
+        },
+        {
+          "id": "advanced",
+          "label": "Advanced Settings",
+          "collapsible": true,
+          "fields": [
+            { "key": "costLimits",        "label": "Cost & Limits",      "type": "cost-limits",        "required": false, "target": "topLevel" },
+            { "key": "availableFeatures", "label": "Available Features", "type": "available-features", "required": false, "target": "topLevel" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "azure",
+      "label": "Azure OpenAI",
+      "icon": "azure",
+      "sections": [
+        {
+          "id": "basic",
+          "label": "Basic Information",
+          "collapsible": false,
+          "fields": [
+            { "key": "modelInfoKey", "label": "Model Info", "type": "model-info-select", "required": true,  "target": "topLevel" },
+            { "key": "name",         "label": "Model Name", "type": "string",            "required": true,  "target": "topLevel" },
+            { "key": "tags",         "label": "Tags",       "type": "tag-picker",        "required": false, "target": "topLevel" }
+          ]
+        },
+        {
+          "id": "credential",
+          "label": "Model Credential",
+          "collapsible": false,
+          "fields": [
+            { "key": "api_key",         "label": "API Key",         "type": "password", "required": true,  "target": "options" },
+            { "key": "api_base",        "label": "API Base",        "type": "url",      "required": true,  "target": "options", "placeholder": "https://{resource}.openai.azure.com" },
+            { "key": "api_version",     "label": "API Version",     "type": "string",   "required": false, "target": "options", "placeholder": "不填用 LiteLLM 預設值" },
+            { "key": "deployment_name", "label": "Deployment Name", "type": "string",   "required": false, "target": "options", "placeholder": "留空 = 使用 Model Name" }
+          ]
+        },
+        {
+          "id": "advanced",
+          "label": "Advanced Settings",
+          "collapsible": true,
+          "fields": [
+            { "key": "api_key_secondary", "label": "API Key (Secondary)", "type": "password",          "required": false, "target": "options" },
+            { "key": "costLimits",        "label": "Cost & Limits",       "type": "cost-limits",        "required": false, "target": "topLevel" },
+            { "key": "availableFeatures", "label": "Available Features",  "type": "available-features", "required": false, "target": "topLevel" }
+          ]
+        }
+      ]
+    }
+  ]
+}
