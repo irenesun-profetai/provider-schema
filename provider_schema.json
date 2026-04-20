@@ -1,7 +1,7 @@
 {
   "providers": [
     {
-      "id": "opena22i",
+      "id": "openai",
       "label": "OpenAI",
       "icon": "openai",
       "sections": [
