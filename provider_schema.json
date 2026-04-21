@@ -146,6 +146,36 @@
           ]
         }
       ]
+    },
+    {
+      "value": "anthropic",
+      "label": "Claude (Anthropic)",
+      "sections": [
+        {
+          "key": "credential",
+          "label": "模型憑證",
+          "fields": [
+            {
+              "key": "api_key",
+              "label": "API Key",
+              "placeholder": "sk-ant-...",
+              "type": "password",
+              "required": true,
+              "defaultValue": null,
+              "target": "options"
+            },
+            {
+              "key": "api_base",
+              "label": "API Base URL",
+              "placeholder": "https://api.anthropic.com",
+              "type": "text",
+              "required": false,
+              "defaultValue": null,
+              "target": "options"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
