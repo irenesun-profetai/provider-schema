@@ -149,7 +149,7 @@
     },
     {
       "value": "anthropic",
-      "label": "Claude (Anthropic)",
+      "label": "Claude",
       "sections": [
         {
           "key": "credential",
@@ -171,6 +171,243 @@
               "type": "text",
               "required": false,
               "defaultValue": null,
+              "target": "options"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "value": "bedrock",
+      "label": "AWS Bedrock",
+      "sections": [
+        {
+          "key": "credential",
+          "label": "模型憑證",
+          "fields": [
+            {
+              "key": "aws_access_key_id",
+              "label": "AWS Access Key ID",
+              "placeholder": "AKIA...",
+              "type": "password",
+              "required": true,
+              "defaultValue": null,
+              "target": "options"
+            },
+            {
+              "key": "aws_secret_access_key",
+              "label": "AWS Secret Access Key",
+              "placeholder": "Enter your AWS Secret Access Key",
+              "type": "password",
+              "required": true,
+              "defaultValue": null,
+              "target": "options"
+            },
+            {
+              "key": "aws_region_name",
+              "label": "AWS Region",
+              "placeholder": "us-east-1",
+              "type": "text",
+              "required": true,
+              "defaultValue": "us-east-1",
+              "target": "options"
+            },
+            {
+              "key": "aws_session_token",
+              "label": "AWS Session Token",
+              "placeholder": "Enter AWS Session Token (optional)",
+              "type": "password",
+              "required": false,
+              "defaultValue": null,
+              "target": "options"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "value": "vertex_ai",
+      "label": "Google Vertex AI",
+      "sections": [
+        {
+          "key": "credential",
+          "label": "模型憑證",
+          "fields": [
+            {
+              "key": "vertex_project",
+              "label": "GCP Project ID",
+              "placeholder": "my-gcp-project",
+              "type": "text",
+              "required": true,
+              "defaultValue": null,
+              "target": "options"
+            },
+            {
+              "key": "vertex_location",
+              "label": "Vertex Location",
+              "placeholder": "us-central1",
+              "type": "text",
+              "required": true,
+              "defaultValue": "us-central1",
+              "target": "options"
+            },
+            {
+              "key": "vertex_credentials",
+              "label": "Service Account Credentials",
+              "placeholder": "Service Account JSON (single line) or path",
+              "type": "password",
+              "required": true,
+              "defaultValue": null,
+              "target": "options"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "value": "deepseek",
+      "label": "DeepSeek",
+      "sections": [
+        {
+          "key": "credential",
+          "label": "模型憑證",
+          "fields": [
+            {
+              "key": "api_key",
+              "label": "API Key",
+              "placeholder": "Enter your DeepSeek API Key",
+              "type": "password",
+              "required": true,
+              "defaultValue": null,
+              "target": "options"
+            },
+            {
+              "key": "api_base",
+              "label": "API Base URL",
+              "placeholder": "https://api.deepseek.com",
+              "type": "text",
+              "required": false,
+              "defaultValue": null,
+              "target": "options"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "value": "mistral",
+      "label": "Mistral AI",
+      "sections": [
+        {
+          "key": "credential",
+          "label": "模型憑證",
+          "fields": [
+            {
+              "key": "api_key",
+              "label": "API Key",
+              "placeholder": "Enter your Mistral API Key",
+              "type": "password",
+              "required": true,
+              "defaultValue": null,
+              "target": "options"
+            },
+            {
+              "key": "api_base",
+              "label": "API Base URL",
+              "placeholder": "https://api.mistral.ai/v1",
+              "type": "text",
+              "required": false,
+              "defaultValue": null,
+              "target": "options"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "value": "cohere",
+      "label": "Cohere",
+      "sections": [
+        {
+          "key": "credential",
+          "label": "模型憑證",
+          "fields": [
+            {
+              "key": "api_key",
+              "label": "API Key",
+              "placeholder": "Enter your Cohere API Key",
+              "type": "password",
+              "required": true,
+              "defaultValue": null,
+              "target": "options"
+            },
+            {
+              "key": "api_base",
+              "label": "API Base URL",
+              "placeholder": "https://api.cohere.com",
+              "type": "text",
+              "required": false,
+              "defaultValue": null,
+              "target": "options"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "value": "openrouter",
+      "label": "OpenRouter",
+      "sections": [
+        {
+          "key": "credential",
+          "label": "模型憑證",
+          "fields": [
+            {
+              "key": "api_key",
+              "label": "API Key",
+              "placeholder": "sk-or-...",
+              "type": "password",
+              "required": true,
+              "defaultValue": null,
+              "target": "options"
+            },
+            {
+              "key": "api_base",
+              "label": "API Base URL",
+              "placeholder": "https://openrouter.ai/api/v1",
+              "type": "text",
+              "required": true,
+              "defaultValue": "https://openrouter.ai/api/v1",
+              "target": "options"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "value": "nvidia_nim",
+      "label": "NVIDIA NIM",
+      "sections": [
+        {
+          "key": "credential",
+          "label": "模型憑證",
+          "fields": [
+            {
+              "key": "api_key",
+              "label": "API Key",
+              "placeholder": "Enter your NVIDIA NIM API Key",
+              "type": "password",
+              "required": true,
+              "defaultValue": null,
+              "target": "options"
+            },
+            {
+              "key": "api_base",
+              "label": "API Base URL",
+              "placeholder": "https://integrate.api.nvidia.com/v1/",
+              "type": "text",
+              "required": false,
+              "defaultValue": "https://integrate.api.nvidia.com/v1/",
               "target": "options"
             }
           ]
