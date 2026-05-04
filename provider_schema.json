@@ -413,6 +413,87 @@
           ]
         }
       ]
+    },
+    {
+      "value": "zai",
+      "label": "GLM / Zhipu AI",
+      "sections": [
+        {
+          "key": "credential",
+          "label": "模型憑證",
+          "fields": [
+            {
+              "key": "api_key",
+              "label": "API Key",
+              "placeholder": "Enter your Z.AI API Key",
+              "type": "password",
+              "required": true,
+              "defaultValue": null,
+              "target": "options"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "value": "minimax",
+      "label": "MiniMax",
+      "sections": [
+        {
+          "key": "credential",
+          "label": "模型憑證",
+          "fields": [
+            {
+              "key": "api_key",
+              "label": "API Key",
+              "placeholder": "Enter your MiniMax API Key",
+              "type": "password",
+              "required": true,
+              "defaultValue": null,
+              "target": "options"
+            },
+            {
+              "key": "api_base",
+              "label": "API Base URL",
+              "placeholder": "https://api.minimax.io/v1",
+              "type": "text",
+              "required": true,
+              "defaultValue": "https://api.minimax.io/v1",
+              "target": "options"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "value": "dashscope",
+      "label": "Qwen / Alibaba Cloud DashScope",
+      "sections": [
+        {
+          "key": "credential",
+          "label": "模型憑證",
+          "fields": [
+            {
+              "key": "api_key",
+              "label": "API Key",
+              "placeholder": "Enter your DashScope API Key",
+              "type": "password",
+              "required": true,
+              "defaultValue": null,
+              "target": "options"
+            },
+            {
+              "key": "api_base",
+              "label": "API Base URL",
+              "placeholder": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
+              "type": "text",
+              "required": true,
+              "defaultValue": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
+              "target": "options"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
