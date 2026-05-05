@@ -416,7 +416,7 @@
     },
     {
       "value": "zai",
-      "label": "GLM / Zhipu AI",
+      "label": "GLM",
       "sections": [
         {
           "key": "credential",
@@ -467,7 +467,7 @@
     },
     {
       "value": "dashscope",
-      "label": "Qwen / Alibaba Cloud DashScope",
+      "label": "Qwen",
       "sections": [
         {
           "key": "credential",
