@@ -186,20 +186,29 @@
           "label": "模型憑證",
           "fields": [
             {
+              "key": "api_key",
+              "label": "Bedrock API Key (Bearer Token)",
+              "placeholder": "Bedrock API Key; alternative to Access Key + Secret Key (API Key takes precedence if both are set)",
+              "type": "password",
+              "required": false,
+              "defaultValue": null,
+              "target": "options"
+            },
+            {
               "key": "aws_access_key_id",
               "label": "AWS Access Key ID",
-              "placeholder": "AKIA...",
+              "placeholder": "AKIA... (required if API Key is not set)",
               "type": "password",
-              "required": true,
+              "required": false,
               "defaultValue": null,
               "target": "options"
             },
             {
               "key": "aws_secret_access_key",
               "label": "AWS Secret Access Key",
-              "placeholder": "Enter your AWS Secret Access Key",
+              "placeholder": "AWS Secret Access Key (required if API Key is not set)",
               "type": "password",
-              "required": true,
+              "required": false,
               "defaultValue": null,
               "target": "options"
             },
