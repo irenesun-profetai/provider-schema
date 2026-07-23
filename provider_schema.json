@@ -88,6 +88,46 @@
       ]
     },
     {
+  "value": "azure_ai",
+  "label": "Azure AI Foundry",
+  "sections": [
+    {
+      "key": "credential",
+      "label": "模型憑證",
+      "fields": [
+        {
+          "key": "api_key",
+          "label": "API Key",
+          "placeholder": "Enter your Azure AI Foundry API Key",
+          "type": "password",
+          "required": true,
+          "defaultValue": null,
+          "target": "options"
+        },
+        {
+          "key": "api_base",
+          "label": "API Base URL",
+          "placeholder": "https://{resource}.services.ai.azure.com/models",
+          "type": "text",
+          "required": true,
+          "defaultValue": null,
+          "target": "options"
+        },
+        {
+          "key": "model",
+          "label": "Model / Deployment Name",
+          "placeholder": "DeepSeek-R1",
+          "type": "text",
+          "required": false,
+          "defaultValue": null,
+          "target": "root"
+        }
+      ]
+    }
+  ]
+},
+    
+    {
       "value": "gemini",
       "label": "Google",
       "sections": [
