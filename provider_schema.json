@@ -88,7 +88,7 @@
       ]
     },
     {
-  "value": "azure",
+  "value": "azure_ai",
   "label": "Azure AI Foundry",
   "sections": [
     {
