@@ -88,46 +88,6 @@
       ]
     },
     {
-  "value": "azure_ai",
-  "label": "Azure AI Foundry",
-  "sections": [
-    {
-      "key": "credential",
-      "label": "模型憑證",
-      "fields": [
-        {
-          "key": "api_key",
-          "label": "API Key",
-          "placeholder": "Enter your Azure AI Foundry API Key",
-          "type": "password",
-          "required": true,
-          "defaultValue": null,
-          "target": "options"
-        },
-        {
-          "key": "api_base",
-          "label": "API Base URL",
-          "placeholder": "https://{resource}.services.ai.azure.com/models",
-          "type": "text",
-          "required": true,
-          "defaultValue": null,
-          "target": "options"
-        },
-        {
-          "key": "model",
-          "label": "Model / Deployment Name",
-          "placeholder": "DeepSeek-R1",
-          "type": "text",
-          "required": false,
-          "defaultValue": null,
-          "target": "root"
-        }
-      ]
-    }
-  ]
-},
-    
-    {
       "value": "gemini",
       "label": "Google",
       "sections": [
@@ -431,6 +391,42 @@
             }
           ]
         }
+      ]
+    },
+    {
+      "value": "mixroute",
+      "label": "MixRoute",
+      "sections": [
+        {
+          "key": "credential",
+          "label": "模型憑證",
+          "fields": [
+            {
+              "key": "api_key",
+              "label": "API Key",
+              "placeholder": "Enter your MixRoute API Key",
+              "type": "password",
+              "required": true,
+              "defaultValue": null,
+              "target": "options"
+            },
+            {
+              "key": "api_base",
+              "label": "API Base URL",
+              "placeholder": "https://api.mixroute.ai/v1",
+              "type": "text",
+              "required": true,
+              "defaultValue": "https://api.mixroute.ai/v1",
+              "target": "options"
+            }
+          ]
+        }
+      ],
+      "_notes": [
+        "MixRoute 是 OpenAI 相容 gateway，LiteLLM 上游沒有原生 mixroute provider。後端 LiteLLMClient.buildLiteLLMParams 會把 custom_llm_provider 映射成 openai，並在未帶 api_base 時補上此處的預設端點；少了任一項會被送到 OpenAI 官方端點並回 401，錯誤訊息看起來像金鑰錯誤。",
+        "語音轉錄尚未支援：SpeechService.transcribeByModelSetting 以 serviceName 是否等於 openai 決定要走 OpenAI 轉錄端點或 chat 內嵌音訊，serviceName=mixroute 會落到後者，Whisper 這類只有轉錄端點的模型會失敗。目前無 MixRoute 語音需求，要支援須先處理該分流。",
+        "思考檔位僅涵蓋 GPT 系列：gai_model_reasoning_parameter_default_schema 已有 service_name=mixroute 的種子列（V2026_09_08_100000，內容比照 openai 六列），gpt-5 系列與 o 系列的思考長度下拉正常。MixRoute 底下的 Claude / Gemini 等模型對不上這批 pattern，仍不會出現任何選項且無錯誤、無 log；要支援須先確認它們經 MixRoute 轉出後是否也吃 reasoning_effort，而非沿用 Anthropic thinking.budget_tokens / Gemini thinkingConfig 的原生形狀。",
+        "既有以 serviceName=openai + api_base 指向 MixRoute 建立的模型維持原狀，不做遷移；改 serviceName 會重置 modelId 並觸發 LiteLLM 刪除重建。"
       ]
     },
     {
