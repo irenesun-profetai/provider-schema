@@ -539,6 +539,41 @@
           ]
         }
       ]
+    },
+    {
+      "value": "hosted_vllm",
+      "label": "vLLM",
+      "sections": [
+        {
+          "key": "credential",
+          "label": "模型憑證",
+          "fields": [
+            {
+              "key": "api_base",
+              "label": "API Base URL",
+              "type": "text",
+              "required": true,
+              "target": "options",
+              "placeholder": "http://localhost:8000/v1"
+            },
+            {
+              "key": "api_key",
+              "label": "API Key",
+              "type": "password",
+              "required": false,
+              "target": "options"
+            },
+            {
+              "key": "model",
+              "label": "Served Model ID",
+              "type": "text",
+              "required": true,
+              "target": "root",
+              "placeholder": "Qwen/Qwen3-Reranker-8B"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
